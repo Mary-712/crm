@@ -21,9 +21,9 @@
     
 
 </style>
-<body style="background-color:#A78295;">
+<body style="background-color:white">
 
-    <div class="main" style="background-color:#A78295;">
+    <div class="main" style="background-color:white;">
 
         {% if messages %}
         {% for message in messages %}
@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="signin-form">
-                        <h2 class="form-title" style="color:#331D2C;">Sign In</h2>
+                        <h2 class="form-title" style="color:#a00909;">Sign In</h2>
                         <form class="login-form" id="login-form" class="mt-2" method="post" action="{% url 'log' %}" enctype="multipart/form-data" >
                             {% csrf_token %}
                             <div class="form-group">
@@ -57,7 +57,7 @@
                             </div>
                             <div class="form-group form-button " >
                                 
-                                <input type="submit" style="background-color:#A78295;color:#331D2C;font-weight: bold;font-size:120%;" name="signin" id="signin" class="form-submit " value="Log in"/>
+                                <input type="submit" style="background-color:#f0544f;color:#33221d;font-weight: bold;font-size:120%;" name="signin" id="signin" class="form-submit " value="Log in"/>
                             </div>
                         </form>
                        
