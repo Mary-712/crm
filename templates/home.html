@@ -11,7 +11,8 @@
     
     <link rel="stylesheet" href="StyleIT.css">
 
-    <title style="color: green;">iTechnology</title>
+    <title style="color: rgb(175, 4, 4);">iTechnology</title>
+    {% load static %}
 </head>
 <style>
   /*Designed by CodingTuting.Com*/
@@ -1360,7 +1361,7 @@ footer {
     <section id="delivery">
         <h1 class="sec-heading">Delivering Experience Since 2009</h1>
         <div class="col-5 delivery-img">
-            <img src="https://www.dropbox.com/s/ipx91osglyczpdt/delivery_experience.svg?raw=1" alt="Productivity Delivering Experience" title="Delivering Experience Since 2009"/>
+            <img src="{% static 'image/11.jpg' %}" alt="Productivity Delivering Experience" title="Delivering Experience Since 2009"/>
         </div>
         <div class="col-7">
             <h2>Accelerating your business growth with Digital Experiences</h2>
@@ -1439,7 +1440,7 @@ footer {
                 </div>
             </div>
             <div class="col-6 slide-img">
-                <img src="https://www.dropbox.com/s/ipx91osglyczpdt/delivery_experience.svg?raw=1" alt="World Travel App Development" title="World Travel Protection"/>
+                <img src="{% static 'image/ss.jpg' %}" alt="World Travel App Development" title="World Travel Protection"/>
             </div>
         </div>
     </section>
@@ -1601,6 +1602,7 @@ footer {
        </div>
        <a href="#topHeader" id="gotop">Top</a>
     </footer>
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="ScriptIT.js"></script>

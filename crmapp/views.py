@@ -12,10 +12,11 @@ def log(request):
     return redirect('dashboard')
 
 def new(request):
-    return render(request,'new.html')
+    return render(request,'dashboard.html')
 
 def dashboard(request):
-    return render(request,'dashboard.html')
+   dashboard = request.GET.get('dashboard',' ').split(',')
+   return render(request, 'dashboard.html',{'dashboard':dashboard})
 def archieve(request):
     item_ids = request.GET.get('item_ids',' ').split(',')
-    return render(request, 'Archieve.html', {'item_ids': item_ids})
+    return render(request, 'archieve.html', {'item_ids': item_ids})

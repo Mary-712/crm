@@ -1,74 +1,63 @@
+
+{% block content %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign In </title>
-    <meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-		
-
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="static/assets/fonts/material-icon/css/material-design-iconic-font.min.css">
-
-    <!-- Main css -->
-    <link rel="stylesheet" href="static/assets/csslog/style.css">
-</head>
 <style>
-    
+  body{
+        background-color: #c02525;
+           
+    }
+    .btn{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 130px;
+      text-align: center;
+      font-weight: bold;
+      font-size: large;
+    }
+    .btn:hover{
+      background-color: #3e8e41;
+      color: white;
+
+    }
+    .custom-border {
+      border: 15px solid rgb(243, 238, 238); /* Decreased width */
+  }
+  
 
 </style>
-<body style="background-color:white">
-
-    <div class="main" style="background-color:white;">
-
-        {% if messages %}
-        {% for message in messages %}
-            <label for="" class="text-center" style="background-color: #EFE1D1; width: 30%;color:white;text-shadow: 2px 2px 4px #000000;padding: 10px; border-radius: 10px; margin-left: 52vw; ">{{message}}</label>
-        {% endfor %}
-     {% endif %}
-
-        <!-- Sign in form -->
-        <section class="sign-in" >
-            <div class="container" style="width:50%; height:50%;">
-                <div class="signin-content" style="background-color: #EFE1D1; ">
-                    <div class="signin-image">
-                        <img class="d-block w-100" style="height:100%; width:120%;" src="{% static 'image/login.jpg' %}" alt="login page">
-                    </div>
-
-                    <div class="signin-form">
-                        <h2 class="form-title" style="color:#a00909;">Sign In</h2>
-                        <form class="login-form" id="login-form" class="mt-2" method="post" action="{% url 'log' %}" enctype="multipart/form-data" >
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="username" id="username" placeholder="Enter User Name"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder=" Enter Password"/>
-                            </div>
-                            <div class="form-group">
-
-							
-                            </div>
-                            <div class="form-group form-button " >
-                                
-                                <input type="submit" style="background-color:#f0544f;color:#33221d;font-weight: bold;font-size:120%;" name="signin" id="signin" class="form-submit " value="Log in"/>
-                            </div>
-                        </form>
-                       
-                    </div>
-                </div>
-            </div>
-        </section>
+<body>
+  <div class="container col-md-4">
+    {% for m in messages %}
+<h5 style="text-align: center;">
+    <div class="alert alert-danger mt-4 ">
+        {{ m }}
     </div>
+</h5>
+    {% endfor %}
+</div>
+  <br><br><br>
+    <form class="px-4 py-3" action="{% url 'log' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <br><br><br><br><br>
+      <div class="container col-md-4 custom-border" style="text-align: center;width: 330px;margin-left:500px;">
 
-    <!-- JS -->
-    <script src="static/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="static/assets/js/main.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-</html>
+        <br>
+      <div class="form-group">
+        <!-- <label for="exampleDropdownFormEmail1">User Name</label> -->
+        <input  style="font-weight: bold; font-size: large; border: none; background-color: rgb(248, 228, 217);" type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Username" name="username" required>
+      </div><br>
+      <div class="form-group">
+        <!-- <label for="exampleDropdownFormPassword1">Password</label> -->
+        <input style="font-weight: bold; font-size: large; border: none; background-color: rgb(248, 228, 217);" type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password" name="password" required>
+      </div><br>
+      <span style='color:rgb(24, 22, 22);'>Dont have an account ? <a href="/" style='text-decoration:none; color:#fdf9f9;'>signup</a></span><br><br>
+     
+
+        <button type="submit" class="btn btn-primary form-control">LOGIN</button><br><br>
+      </div>
+    </form>
+    
+    </body>
+    <br><br><br><br><br>
+    
+  {% endblock %}
