@@ -8,20 +8,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/274ee977b7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Document</title>
     {% load static %}
   
+    <br>
     <style>
-        body {
-            background-color: rgb(250, 244, 244);
-            padding: 20px;
-        }
+          body {
+      background-color:rgb(250, 244, 244);
+  padding: 20px;
+}
       
+
         .card-container {
-            perspective: 1000px;
+        perspective: 1000px;
         }
 
         .card {
@@ -29,7 +31,11 @@
             position: relative;
             transform-style: preserve-3d;
             transition: transform 0.8s;
+           
         }
+
+
+       
 
         .card .side {
             width: 100%;
@@ -41,83 +47,112 @@
         }
 
         .card .front {
-            transform: rotateY(0deg);
+            transform: rotateY(0deg); /* Ensure the front side is visible initially */
             display: flex;
         }
 
+      
+
         .popup {
-            display: none;
-            position: fixed;
-            top: 75%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #f9f5f5;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            z-index: 9999;
+          display: none;
+          position: fixed;
+          top: 75%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #0a0a0a;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(104, 103, 103, 0.3);
+          z-index: 9999;
         }
 
         .popup-content {
             text-align: center;
         }
 
-        .table thead th,
-        .table tbody td {
-            text-align: center;
-        }
-        .table thead th {
-            background-color: #ee6363;
-            color: #fff;
-        }
-        .table tbody td {
-            color: #1b1919;
-        }
-        .card {
-            margin-bottom: 20px;
-        }
-        .card-img-top {
-            width: 100%;
-            height: auto;
-        }
-        .card {
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: scale(1.15);
-        }
-        .card-body {
-            padding: 20px;
-        }
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .card-text {
-            font-size: 1.2rem;
-            color: #555;
-        }
-        .button {
-            background-color: rgb(252, 247, 247);
-            border: 2px solid red;
-            color: rgb(24, 22, 22);
-            padding: 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 50px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 50%;
-        }
+       
+      .table thead th,
+.table tbody td {
+  text-align: center; /* Adjust alignment as needed */
+}
+.table thead th {
+  background-color: #3d3c3c; /* Blue color, change as needed */
+  color: #fff; /* Text color, change as needed */
+}
+
+
+
+/* For table body text color */
+.table tbody td {
+  color: #1b1919; /* Dark text color, change as needed */
+}
+.card {
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+      }
+    }
+    .card-img-top {
+      width: 100%;
+      height: auto;
+    }
+    .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  .card:hover {
+        transform: scale(1.15);
+    }
+  .card-body {
+    padding: 20px;
+  }
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .card-text {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .button {
+    background-color:  rgb(252, 247, 247); /* Green */
+    border: 2px solid rgb(59, 58, 58);
+    
+    color: rgb(24, 22, 22);
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 50px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .button5 {border-radius: 50%;}
+
+
+
     </style>
 </head>
+<br><br><br>
 <body>
-    <br><br><br><br>
+  <h2 style="margin-left: 15px;;">Dashboard</h2>
 
+<br> <!-- Dashboard -->
+
+    <!-- Vertical Navbar -->
+   
+    <!-- Main content -->
+  
+    
+       
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -128,205 +163,327 @@
                 <button class="button button5"><i class="fa-solid fa-comment"></i> 500</button>
             </div>
         </div>
-    </div>
-    <br>
+    </div><br><br>
+
+        <div class="container">
+          <div class="row">
+            <div class="container">
+              <div class="table-responsive">
+                <table class="table ">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Article</th>
+                      <th>View</th>
+                      <th>Comment</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Article 73</td>
+                      <td>2.9k</td>
+                      <td>210</td>
+                      
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Article 72</td> 
+                      <td>1.5k</td> 
+                      <td>360</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Article 71</td>
+                      <td>1.1k</td>
+                      <td>150</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Article 70</td>
+                      <td>2.6k</td>
+                      <td>190</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Article 69</td>
+                      <td>1.1k</td>
+                      <td>150</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <!-- Image -->
+            </div>
+            <div class="col-md-6">
+              <!-- Other content here -->
+              
+          </div>
+        </div>
+        
+        
+        
+        <div class="container mt-4">
+          <div class="row">
+          
+            <div class="col-md-4">
+              
+                 
+               
+              </div>
+            </div>
+          
+            
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                 
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                 
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                  
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                  
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                 
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                 
+                </div>
+              </div>
+            </div>
+           
+            <div class="col-md-4">
+              
+                
+              
+                
+            </div>
+            
+            <!-- Add more card elements as needed -->
+          </div>
+        
+          <div class="col-md-12">
+            <h3 style="text-align: center;">Trading Graph</h3><br>
+            <!-- Image -->
+            <img src="{% static 'image/chart.png' %}" style="height: 400px; width: 1000px;" class="img-fluid" alt="Your Image"><br>
+           
+          </div><br>
+        <h2 style="text-align: center;">Flow chart and graph</h2>
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <!-- Image -->
+              <img src="https://stevesnoderedguide.com/wp-content/uploads/chart-csv-file.jpg" style="height: 400px; width: 900px;" class="img-fluid" alt="Your Image"><br>
+             
+            </div>
+            <br>
+            <div class="col-md-6">
+              <img src="https://support.goldensoftware.com/hc/article_attachments/360042929614" style="height: 400px; width: 900px;" class="img-fluid" alt="Your Image">
+             
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <br>
+      
+        <br>
+      
+        <!-- Bootstrap JS (optional, if you need dropdowns, modals, etc.) -->
+        <br>
+        <br>
+    
+       
+      
+        <main class="py-6 bg-surface-secondary">
+            <h2 style="text-align: center;">Messages</h2>
+            <br>
+            <div class="container-fluid">
+                <div class="container mt-3 mb-3 pt-1">
+                    <div class="row">
+                        {% if '1' not in dashboard %}
+                        <div class="col-sm-3 mb-3">
+                            <div id="draggable1" class="card" draggable="true">
+                                <div class="side front">
+                                    <div class="card-body" style="background-color: rgb(56, 54, 54);height:200px;">
+                                        <h5 class="card-title"style="color: white;text-align:center;">Card 1</h5>
+                                        <p class="card-text"style="color: white;text-align: justify;">Technical progress is refers to producing goods.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+    
+                        {% if '2' not in dashboard %}
+                        <div class="col-sm-3 mb-3">
+                            <div id="draggable2" class="card" draggable="true">
+                                <div class="side front">
+                                    <div class="card-body" style="background-color: rgb(56, 54, 54);height:200px;">
+                                        <h5 class="card-title"style="color: white;text-align:center;">Card 2</h5>
+                                        <p class="card-text"style="color: white;text-align: justify;">Technology is a process in which the application of new knowledge.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+    
+                        {% if '3' not in dashboard %}
+                        <div class="col-sm-3 mb-3">
+                            <div id="draggable3" class="card" draggable="true">
+                                <div class="side front">
+                                    <div class="card-body" style="background-color:rgb(56, 54, 54);height:200px;">
+                                        <h5 class="card-title"style="color: white; text-align:center;">Card 3</h5>
+                                        <p class="card-text"style="color: white;text-align: justify;">Technology refers to the process through inputs transformed outputs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+    
+                        {% if '4' not in dashboard %}
+                        <div class="col-sm-3 mb-3">
+                            <div id="draggable4" class="card" draggable="true">
+                                <div class="side front">
+                                    <div class="card-body" style="background-color: rgb(56, 54, 54);height:200px;">
+                                        <h5 class="card-title"style="color: white; text-align:center;">Card 4</h5>
+                                        <p class="card-text"style="color: white;text-align: justify;">Computer speed and power have generally been doubling year</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+          
+          
+                <!-- Add a pop-up element -->
+                <div id="popup" class="popup">
+                  <div class="popup-content">
+                    <img src="https://img.freepik.com/premium-vector/trash-can-logo_609277-204.jpg" style="height: 50px; width: 50px;"  class="img-fluid">
+                  </div>
+                </div>
+          
+<br>
+<br>
+
+        </div>
+      </div>
+      <br>
+   
+     
+    
+
+
+      
+
+      
+
+
+    <script>
+
 
     
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Article</th>
-                                <th>View</th>
-                                <th>Comment</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Article 73</td>
-                                <td>2.9k</td>
-                                <td>210</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Article 72</td>
-                                <td>1.5k</td>
-                                <td>360</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Article 71</td>
-                                <td>1.1k</td>
-                                <td>150</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Article 70</td>
-                                <td>2.6k</td>
-                                <td>190</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Article 69</td>
-                                <td>1.1k</td>
-                                <td>150</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <br>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <!-- Image -->
-            </div>
-            <div class="col-md-6">
-                <!-- Other content here -->
-            </div>
-        </div>
-    </div>
-
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-4">
-                <!-- Add more card elements as needed -->
-            </div>
-            <div class="col-md-4">
-                <!-- Add more card elements as needed -->
-            </div>
-            <div class="col-md-4">
-                <!-- Add more card elements as needed -->
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 style="text-align: center;">Trading Graph</h3><br>
-                <!-- Image -->
-                <img src="{% static 'image/chart.png' %}" style="height: 400px; width: 1000px;" class="img-fluid" alt="Trading Graph">
-            </div>
-        </div>
-    </div>
-
-    <br>
-
-    <h2 style="text-align: center;">Flow chart and graph</h2>
-    <br>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <!-- Image -->
-                <img src="https://stevesnoderedguide.com/wp-content/uploads/chart-csv-file.jpg" style="height: 400px; width: 900px;" class="img-fluid" alt="Flow chart">
-            </div>
-            <div class="col-md-6">
-                <!-- Image -->
-                <img src="https://support.goldensoftware.com/hc/article_attachments/360042929614" style="height: 400px; width: 900px;" class="img-fluid" alt="Graph">
-            </div>
-        </div>
-    </div>
-
-    <br>
-
-    <!-- Messages -->
-    <main class="py-6 bg-surface-secondary">
-        <h2 style="text-align: center;">Messages</h2>
-        <br>
-        <div class="container-fluid">
-            <div class="container mt-3 mb-3 pt-1">
-                <div class="row">
-                    {% if '1' not in dashboard %}
-                    <div class="col-sm-3 mb-3">
-                        <div id="draggable1" class="card" draggable="true">
-                            <div class="side front">
-                                <div class="card-body" style="background-color: rgb(247, 55, 55);height:200px;">
-                                    <h5 class="card-title"style="color: white;text-align:center;">Card 1</h5>
-                                    <p class="card-text"style="color: white;text-align: justify;">Technical progress is refers to producing goods.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-
-                    {% if '2' not in dashboard %}
-                    <div class="col-sm-3 mb-3">
-                        <div id="draggable2" class="card" draggable="true">
-                            <div class="side front">
-                                <div class="card-body" style="background-color: rgb(247, 55, 55);height:200px;">
-                                    <h5 class="card-title"style="color: white;text-align:center;">Card 2</h5>
-                                    <p class="card-text"style="color: white;text-align: justify;">Technology is a process in which the application of new knowledge.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-
-                    {% if '3' not in dashboard %}
-                    <div class="col-sm-3 mb-3">
-                        <div id="draggable3" class="card" draggable="true">
-                            <div class="side front">
-                                <div class="card-body" style="background-color:rgb(247, 55, 55);height:200px;">
-                                    <h5 class="card-title"style="color: white; text-align:center;">Card 3</h5>
-                                    <p class="card-text"style="color: white;text-align: justify;">Technology refers to the process through inputs transformed outputs.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-
-                    {% if '4' not in dashboard %}
-                    <div class="col-sm-3 mb-3">
-                        <div id="draggable4" class="card" draggable="true">
-                            <div class="side front">
-                                <div class="card-body" style="background-color: rgb(247, 55, 55);height:200px;">
-                                    <h5 class="card-title"style="color: white; text-align:center;">Card 4</h5>
-                                    <p class="card-text"style="color: white;text-align: justify;">Computer speed and power have generally been doubling since the 1960s.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
-
-            <!-- Add a pop-up element -->
-            <div id="popup" class="popup">
-                <div class="popup-content">
-                    <img src="https://img.freepik.com/premium-vector/trash-can-logo_609277-204.jpg" style="height: 50px; width: 50px;" class="img-fluid">
-                </div>
-            </div>
-        </div>
-    </main>
 
 
-    <div class="card text-center">
-      <div class="card-header">
-        Featured
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-      <div class="card-footer text-muted">
-        2 days ago
-      </div>
-    </div>
 
-   
-</body>
-</html>
+
+
+    document.querySelectorAll('.card').forEach(card => {
+              card.addEventListener('dragstart', function(e) {
+                  e.dataTransfer.setData('text/plain', card.id);
+                  document.getElementById('popup').style.display = "block"; // Show the popup
+              });
+          });
+      
+          document.getElementById('popup').addEventListener('dragover', function(e) {
+              e.preventDefault();
+          });
+      
+          document.getElementById('popup').addEventListener('drop', function(e) {
+              e.preventDefault();
+              document.getElementById('popup').style.display = "none"; // Hide the popup
+              var data = e.dataTransfer.getData('text/plain');
+              if (data) {
+                  var card = document.getElementById(data);
+                  card.parentNode.removeChild(card); // Remove the dropped card from the page
+              }
+          });
+      
+          document.addEventListener('dragover', function(e) {
+              e.preventDefault();
+          });
+          
+          document.addEventListener('drop', function(e) {
+              e.preventDefault();
+              document.getElementById('popup').style.display = "none"; // Hide the popup
+          });
+
+
+
+
+
+          // Function to retrieve card IDs from the first page and redirect to the second page with item_ids
+          function redirectToSecondPage() {
+              var cardIds = [];
+              document.querySelectorAll('.card').forEach(card => {
+                  var cardId = card.id.replace('draggable', '');
+                  cardIds.push(cardId);
+              });
+              var linkToSecondPage = '{% url "archieve" %}?item_ids=' + cardIds.join(',');
+              window.location.href = linkToSecondPage; // Redirect to the second page with card IDs
+          }
+
+
+
+          document.addEventListener("DOMContentLoaded", function() {
+            const enquiryBox = document.getElementById("enquiry-box");
+            const enquiryLink = document.getElementById("enquiry-link");
+            const closeEnquiryBox = document.getElementById("close-enquiry-box");
+            
+            enquiryLink.addEventListener("click", function(event) {
+                event.preventDefault();
+                enquiryBox.style.display = "block";
+            });
+        
+            closeEnquiryBox.addEventListener("click", function() {
+                enquiryBox.style.display = "none";
+            });
+        });
+
+
+
+
+
+    </script>
+
+
+
+
+  
+<footer style="background-color: #424141;"  class="footer mt-auto py-3 m-5  text-center ">
+  <p style="color:rgb(247, 244, 244);" ><b>&copy; 2024 Your Website. All rights reserved.</b></p>
+  <p style="color:rgb(245, 235, 235);" ><b>&copy; iTechnology@gmail.com.</b></p>
+ 
+ 
+  <p class="mt-auto text-light">
+     <b> Phone: +91 7890023659</b>
+     </p>
+</footer> 
 
 {% endblock %}
+
+</body>
+</html>
