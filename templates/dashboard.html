@@ -1,3 +1,4 @@
+
 {% extends 'sidenav.html' %}
 {% block content %}
 
@@ -137,13 +138,47 @@
   }
   .button5 {border-radius: 50%;}
 
+  @media (max-width: 1024px) {
+    /* Adjustments for smaller screens */
+    .container {
+        width: 90%; /* Adjust container width */
+        margin: 0 auto; /* Center the container */
+    }
+    .col-md-12 {
+        text-align: center; /* Center content within column */
+    }
+    /* Adjust image size */
+    .img-fluid {
+        max-width: 100%; /* Ensure images don't overflow */
+        height: auto; /* Maintain aspect ratio */
+    }
+    /* Additional adjustments as needed */
+    /* You may need to adjust specific elements based on how they look on this screen size */
+}
 
+@media (max-width: 1068px) {
+  /* Adjustments for smaller screens */
+  .container {
+      width: 90%; /* Adjust container width */
+      margin: 0 auto; /* Center the container */
+  }
+  .col-md-12 {
+      text-align: center; /* Center content within column */
+  }
+  /* Adjust image size */
+  .img-fluid {
+      max-width: 100%; /* Ensure images don't overflow */
+      height: auto; /* Maintain aspect ratio */
+  }
+  /* Additional adjustments as needed */
+  /* You may need to adjust specific elements based on how they look on this screen size */
+}
 
     </style>
 </head>
 <br><br><br>
 <body>
-  <h2 style="margin-left: 15px;;">Dashboard</h2>
+  <h2 style="margin-left: 65px;">Dashboard</h2>
 
 <br> <!-- Dashboard -->
 
@@ -275,12 +310,15 @@
             <!-- Add more card elements as needed -->
           </div>
         
+
+
+          
           <div class="col-md-12">
             <h3 style="text-align: center;">Trading Graph</h3><br>
             <!-- Image -->
             <img src="{% static 'image/chart.png' %}" style="height: 400px; width: 1000px;" class="img-fluid" alt="Your Image"><br>
            
-          </div><br>
+          </div><br><br>
         <h2 style="text-align: center;">Flow chart and graph</h2>
         <br>
         <div class="container">
@@ -306,9 +344,61 @@
         <br>
         <br>
     
-       
+        <div class="container">
+          <div class="row">
+            <div class="container">
+              <div class="table-responsive">
+                <table class="table ">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Type</th>
+                      <th>Status</th>
+                      <th>State</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Customer</td>
+                      <td>Active</td>
+                      <td>CA</td>
+                      
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Customer</td> 
+                      <td>Inactive</td> 
+                      <td>NY</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Prospect</td>
+                      <td>Active</td>
+                      <td>TX</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Customer</td>
+                      <td>Active</td>
+                      <td>CO</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Prospect</td>
+                      <td>Inactive</td>
+                      <td>FL</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
       
-        <main class="py-6 bg-surface-secondary">
+        <main class="py-6 bg-surface-secondary" style="padding-bottom: 10px;">
             <h2 style="text-align: center;">Messages</h2>
             <br>
             <div class="container-fluid">
@@ -320,7 +410,7 @@
                                 <div class="side front">
                                     <div class="card-body" style="background-color: rgb(56, 54, 54);height:200px;">
                                         <h5 class="card-title"style="color: white;text-align:center;">Card 1</h5>
-                                        <p class="card-text"style="color: white;text-align: justify;">Technical progress is refers to producing goods.</p>
+                                        <p class="card-text"style="color: white;text-align: justify;">Technical progress producing goods.</p>
                                     </div>
                                 </div>
                             </div>
@@ -333,7 +423,7 @@
                                 <div class="side front">
                                     <div class="card-body" style="background-color: rgb(56, 54, 54);height:200px;">
                                         <h5 class="card-title"style="color: white;text-align:center;">Card 2</h5>
-                                        <p class="card-text"style="color: white;text-align: justify;">Technology is a process in which the application of new knowledge.</p>
+                                        <p class="card-text"style="color: white;text-align: justify;">Technology process to knowledge.</p>
                                     </div>
                                 </div>
                             </div>
@@ -346,7 +436,7 @@
                                 <div class="side front">
                                     <div class="card-body" style="background-color:rgb(56, 54, 54);height:200px;">
                                         <h5 class="card-title"style="color: white; text-align:center;">Card 3</h5>
-                                        <p class="card-text"style="color: white;text-align: justify;">Technology refers to the process through inputs transformed outputs.</p>
+                                        <p class="card-text"style="color: white;text-align: justify;">Technology refers to transform outputs.</p>
                                     </div>
                                 </div>
                             </div>
@@ -359,7 +449,7 @@
                                 <div class="side front">
                                     <div class="card-body" style="background-color: rgb(56, 54, 54);height:200px;">
                                         <h5 class="card-title"style="color: white; text-align:center;">Card 4</h5>
-                                        <p class="card-text"style="color: white;text-align: justify;">Computer speed and power have generally been doubling year</p>
+                                        <p class="card-text"style="color: white;text-align: justify;">Computer speed to doubling a year.</p>
                                     </div>
                                 </div>
                             </div>
@@ -372,7 +462,7 @@
                 <!-- Add a pop-up element -->
                 <div id="popup" class="popup">
                   <div class="popup-content">
-                    <img src="https://img.freepik.com/premium-vector/trash-can-logo_609277-204.jpg" style="height: 50px; width: 50px;"  class="img-fluid">
+                    <img src="{% static 'image/a.jpg' %}" style="height: 50px; width: 50px;"  class="img-fluid">
                   </div>
                 </div>
           
@@ -381,6 +471,7 @@
 
         </div>
       </div>
+    </main>
       <br>
    
      
@@ -473,15 +564,7 @@
 
 
   
-<footer style="background-color: #424141;"  class="footer mt-auto py-3 m-5  text-center ">
-  <p style="color:rgb(247, 244, 244);" ><b>&copy; 2024 Your Website. All rights reserved.</b></p>
-  <p style="color:rgb(245, 235, 235);" ><b>&copy; iTechnology@gmail.com.</b></p>
- 
- 
-  <p class="mt-auto text-light">
-     <b> Phone: +91 7890023659</b>
-     </p>
-</footer> 
+
 
 {% endblock %}
 
