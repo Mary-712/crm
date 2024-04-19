@@ -1,4 +1,3 @@
-
 {% extends 'sidenav.html' %}
 {% block content %}
 
@@ -18,7 +17,7 @@
     <br>
     <style>
           body {
-      background-color:rgb(250, 244, 244);
+      background-color:rgb(205, 205, 205);
   padding: 20px;
 }
       
@@ -60,10 +59,10 @@
           top: 75%;
           left: 50%;
           transform: translate(-50%, -50%);
-          background-color: #0a0a0a;
+          background-color: #f9f5f5;
           padding: 20px;
           border-radius: 5px;
-          box-shadow: 0 0 10px rgba(104, 103, 103, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
           z-index: 9999;
         }
 
@@ -77,15 +76,18 @@
   text-align: center; /* Adjust alignment as needed */
 }
 .table thead th {
-  background-color: #3d3c3c; /* Blue color, change as needed */
+  background-color: #090909; /* Blue color, change as needed */
   color: #fff; /* Text color, change as needed */
 }
 
-
+/* For table body alternating rows */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #ffffff; /* Light gray color, change as needed */
+}
 
 /* For table body text color */
 .table tbody td {
-  color: #1b1919; /* Dark text color, change as needed */
+  color: #333; /* Dark text color, change as needed */
 }
 .card {
       margin-bottom: 20px;
@@ -123,83 +125,59 @@
     color: #555;
   }
   
-  .button {
-    background-color:  rgb(252, 247, 247); /* Green */
-    border: 2px solid rgb(59, 58, 58);
+
+  @media (min-width: 1024px) {
     
-    color: rgb(24, 22, 22);
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 50px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-  .button5 {border-radius: 50%;}
-
-  @media (max-width: 1024px) {
-    /* Adjustments for smaller screens */
-    .container {
-        width: 90%; /* Adjust container width */
-        margin: 0 auto; /* Center the container */
+    .h-screen {
+        margin-left: 40px; /* Same as sidebar width */
     }
-    .col-md-12 {
-        text-align: center; /* Center content within column */
-    }
-    /* Adjust image size */
-    .img-fluid {
-        max-width: 100%; /* Ensure images don't overflow */
-        height: auto; /* Maintain aspect ratio */
-    }
-    /* Additional adjustments as needed */
-    /* You may need to adjust specific elements based on how they look on this screen size */
 }
 
-@media (max-width: 1068px) {
-  /* Adjustments for smaller screens */
-  .container {
-      width: 90%; /* Adjust container width */
-      margin: 0 auto; /* Center the container */
-  }
-  .col-md-12 {
-      text-align: center; /* Center content within column */
-  }
-  /* Adjust image size */
-  .img-fluid {
-      max-width: 100%; /* Ensure images don't overflow */
-      height: auto; /* Maintain aspect ratio */
-  }
-  /* Additional adjustments as needed */
-  /* You may need to adjust specific elements based on how they look on this screen size */
-}
 
     </style>
 </head>
-<br><br><br>
-<body>
-  <h2 style="margin-left: 65px;">Dashboard</h2>
 
-<br> <!-- Dashboard -->
+<body >
+  <!-- Dashboard -->
 
     <!-- Vertical Navbar -->
    
     <!-- Main content -->
   
-    
-       
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-              &nbsp;&nbsp;&nbsp;&nbsp;<button class="button button5"><i class="fa-solid fa-thumbs-up"></i> 50%</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="button button5"><i class="fa-solid fa-share-from-square"></i> 2.1K</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="button button5"><i class="fa-solid fa-eye"></i> 55K</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                <button class="button button5"><i class="fa-solid fa-comment"></i> 500</button>
+    <br>
+    <div class="h-screen flex-grow-1 overflow-y-lg-auto">
+        <!-- Header -->
+        <header class="bg-surface-primary border-bottom pt-6">
+            <div class="container-fluid">
+                <div class="mb-npx">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+                            <!-- Title -->
+                            <br>
+                            <br>
+                            <h1 class="h2 mb-0 ls-tight">Dashboard</h1>
+                            
+                        </div>
+                        
+                        <!-- Actions -->
+                        
+                    <!-- Nav -->
+                    <ul class="nav nav-tabs mt-4 overflow-x border-0">
+                        <li class="nav-item ">
+                            <a href="#" class="nav-link active">All files</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link font-regular">Shared</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link font-regular">File requests</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </div><br><br>
-
+        </header>
+        <br>
+        <br>
         <div class="container">
           <div class="row">
             <div class="container">
@@ -253,72 +231,32 @@
           </div>
         </div>
         <br>
+
+
+       
+        <br>
         <div class="container">
           <div class="row">
             <div class="col-md-6">
               <!-- Image -->
+              <img src="{% static 'image/crm.png' %}" class="img-fluid" alt="Your Image">
             </div>
             <div class="col-md-6">
               <!-- Other content here -->
-              
+              <h2>CRM Marketing Statistics</h2>
+              <p style="text-align: justify;">As stated by Gartner, CRM systems overtook the database management systems (DBMSs) by revenue in late 2017, when their revenue reached $39.5 billion, while database management systems had $36.8 billion. According to SelectHub, the CRM market size will reach $80 billion by 2025.
+
+                The survey on Customer Engagement Platforms by Ovum goes further and breaks down the expected growth of CRM into segments. As you see in the diagram below, the marketing automation CRM segment is forecast to grow the fastest up to 2022, followed by the customer service automation segment and the sales force automation segment.
+                
+                For a CRM user, these figures mean that CRMs’ functionality and ease of use are likely to improve constantly as CRM vendors will be striving to survive the competition.</p>
+            </div>
           </div>
         </div>
+        <br>
         
         
-        
-        <div class="container mt-4">
-          <div class="row">
-          
-            <div class="col-md-4">
-              
-                 
-               
-              </div>
-            </div>
-          
-            
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6 col-lg-4 mb-4">
-                 
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                 
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                  
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                  
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                 
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                 
-                </div>
-              </div>
-            </div>
-           
-            <div class="col-md-4">
-              
-                
-              
-                
-            </div>
-            
-            <!-- Add more card elements as needed -->
-          </div>
-        
-
-
-          
-          <div class="col-md-12">
-            <h3 style="text-align: center;">Trading Graph</h3><br>
-            <!-- Image -->
-            <img src="{% static 'image/chart.png' %}" style="height: 400px; width: 1000px;" class="img-fluid" alt="Your Image"><br>
-           
-          </div><br><br>
+      
+        <br>
         <h2 style="text-align: center;">Flow chart and graph</h2>
         <br>
         <div class="container">
@@ -342,8 +280,14 @@
       
         <!-- Bootstrap JS (optional, if you need dropdowns, modals, etc.) -->
         <br>
-        <br>
-    
+        <div class="col-md-12">
+          <h3 style="text-align: center;">Trading Graph</h3><br>
+          <!-- Image -->
+          <img src="{% static 'image/chart.png' %}" style="height: 400px; width: 1000px;" class="img-fluid" alt="Your Image"><br>
+         
+        </div><br><br><br>
+       
+      
         <div class="container">
           <div class="row">
             <div class="container">
@@ -396,7 +340,24 @@
             </div>
           </div>
         </div>
-        <br>
+        <br><br>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <!-- Image -->
+              <img src="{% static 'image/graph.png' %}" class="img-fluid" alt="Your Image">
+            </div>
+            <div class="col-md-6">
+              <!-- Other content here -->
+              <h2>CRM Software Use by Industry</h2>
+              <p style="text-align: justify;">As stated in SelectHub’s CRM user survey, the majority (32%) of the respondents that use CRM belong to the service industry. They’re followed by IT and manufacturing companies (both of the groups take 13%).There’s a direct correlation between CRM adoption rates and sales teams’ performance. As stated in the Sales Operations Optimization Study by Miller Heiman Group, companies with CRM adoption rates of ≤75% have poorer sales teams’ performance. It manifests in a lower win rate of forecast sales opportunities and a lower quota attainment rate as compared to sales organizations with a higher CRM adoption rate. Thus, if you need to improve your sales teams’ performance, try to ensure all-round adoption of your CRM by providing hands-on user training and release notes.</p>
+            </div>
+          </div>
+        </div>
+        <br><br>
+     
+       
       
         <main class="py-6 bg-surface-secondary" style="padding-bottom: 10px;">
             <h2 style="text-align: center;">Messages</h2>
@@ -470,8 +431,9 @@
 <br>
 
         </div>
-      </div>
+      
     </main>
+  </div>
       <br>
    
      
